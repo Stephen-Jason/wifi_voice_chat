@@ -35,7 +35,7 @@ public class ClientHandler implements Runnable{
         clientHandlerList.add(clientHandler);
     }
 
-    public List<ClientHandler> getClientHandlerList(){
+    public static List<ClientHandler> getClientHandlerList(){
         return clientHandlerList;
     }
 
@@ -85,6 +85,10 @@ public class ClientHandler implements Runnable{
 
     @Override
     public void run() {
-
+        try {
+            this.receiveAudioFromClient();
+        } catch (IOException e) {
+            System.out.println("Something went wrong, shutting down connection to client " + this.clientID);
+        }
     }
 }
