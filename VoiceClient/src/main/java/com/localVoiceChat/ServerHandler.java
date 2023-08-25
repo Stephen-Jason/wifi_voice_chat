@@ -79,9 +79,6 @@ public class ServerHandler implements Runnable{
     public void receiveAudioFromServer(){
 
                 while(!this.socket.isClosed()){
-                    if(AudioSystem.){
-                        continue;
-                    }
                     try(
                             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(this.bufferedInputStream);
                     ){

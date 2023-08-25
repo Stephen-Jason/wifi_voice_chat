@@ -8,7 +8,7 @@ public class Client {
 
     private Scanner scanner;
     private ServerHandler serverHandler;
-    Client(){
+    public Client(){
         this.scanner = new Scanner(System.in);
     }
 
