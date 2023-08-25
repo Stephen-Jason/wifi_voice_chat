@@ -18,13 +18,13 @@ public class ClientHandler implements Runnable{
     private BufferedInputStream bufferedInputStream;
     private static List<ClientHandler> clientHandlerList = new ArrayList<>();
     private int clientID;
-    public int num = 0;
 
     ClientHandler(Socket socket) throws IOException {
         this.socket = socket;
         this.bufferedOutputStream = new BufferedOutputStream(this.socket.getOutputStream());
         this.bufferedInputStream = new BufferedInputStream(this.socket.getInputStream());
         this.clientID = clientHandlerList.size() + 1;
+        addNewClient(this);
     }
 
     public int getClientID(){

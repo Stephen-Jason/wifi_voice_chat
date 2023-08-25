@@ -56,6 +56,8 @@ public class Client {
 
             System.out.println("Goodbye!");
         }
+
+        new Thread(this.serverHandler).start();
     }
 
 
